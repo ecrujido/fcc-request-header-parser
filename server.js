@@ -45,8 +45,8 @@ app.get("/api/hello", function(req, res) {
 //     console.log("Your app is listening on port " + listener.address().port);
 // });
 
-app.get("/api/whoami", (req, res) => {
-    const reqIP = req.header("x-forwarded-for") || req.connection.remoteAddress;
+app.get("localhost/api/whoami", (req, res) => {
+    const reqIP = req.header("x-forwarded-for") || req.remoteAddress;
     const reqLanguage = req.headers["accept-language"];
     const reqSoftware = req.headers["user-agent"];
   
