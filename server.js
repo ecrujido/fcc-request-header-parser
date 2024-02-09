@@ -27,24 +27,6 @@ app.get("/api/hello", function(req, res) {
 });
 
 
-
-// app.get("/api/whoami", (req, res) => {
-//     var ip = req.header("x-forwarded-for") || req.connection.remoteAddress;
-
-//     res.json({
-//         ipaddress: ip,
-//         software: req.header("user-agent"),
-//         language: req.header("accept-language")
-//     });
-// });
-
-// const PORT = 3000 || process.env.PORT;
-
-// // listen for requests :)
-// var listener = app.listen(PORT, function() {
-//     console.log("Your app is listening on port " + listener.address().port);
-// });
-
 app.get("/api/whoami", (req, res) => {
     const reqIP = req.header("x-forwarded-for") || req.remoteAddress;
     const reqLanguage = req.headers["accept-language"];
